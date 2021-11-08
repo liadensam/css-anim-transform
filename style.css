@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* background animation */
+.anim__background {
+  width: 100%;
+  height: 300px;
+  background-color: #9660db;
+  background-image: linear-gradient(-45deg, #eda056, #b503a6, #cbf35e, #9660db);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 500% 300%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* shake of circles */
+
+.anim__shake-flex {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.anim__shake {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.anim__shake:nth-child(1) {
+  background: #944cc4;
+}
+
+.anim__shake:nth-child(2) {
+  background: #9caf2c;
+}
+
+.anim__shake:nth-child(3) {
+  background: #cc7025;
+}
+
+.anim__shake:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.7s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, -3px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(4px, 3px) rotate(0deg);
+  }
+  40% {
+    transform: translate(2px, -2px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-2px, 3px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-4px, 2px) rotate(0deg);
+  }
+  70% {
+    transform: translate(4px, 2px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(2px, -2px) rotate(-1deg);
+  }
+}
+
+/* loading dots*/
+.anim__loading-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.anim__loading-flex p {
+  text-transform: uppercase;
+  color: #7c3ca7;
+  font-weight: 800;
+}
+
+.anim__loading-dots {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.anim__loading-dots div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(136, 207, 55);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.anim__loading-dots div:nth-child(1) {
+  left: 8px;
+  animation: anim__loading-dots1 0.6s infinite;
+}
+.anim__loading-dots div:nth-child(2) {
+  left: 8px;
+  animation: anim__loading-dots2 0.6s infinite;
+}
+.anim__loading-dots div:nth-child(3) {
+  left: 32px;
+  animation: anim__loading-dots2 0.6s infinite;
+}
+.anim__loading-dots div:nth-child(4) {
+  left: 56px;
+  animation: anim__loading-dots3 0.6s infinite;
+}
+@keyframes anim__loading-dots1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes anim__loading-dots3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes anim__loading-dots2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* loading */
+.anim__four-dots-div {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.anim__four-dots-div div {
+  position: absolute;
+  border: 4px solid rgb(236, 120, 12);
+  opacity: 1;
+  border-radius: 50%;
+  animation: anim__four-dots-div 1s cubic-bezier(0, 0.3, 0.9, 1) infinite;
+}
+.anim__four-dots-div div:nth-child(2) {
+  animation-delay: -0.8s;
+}
+@keyframes anim__four-dots-div {
+  0% {
+    top: 50px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
